@@ -1,0 +1,95 @@
+لكل مشروع يتم انشاء مجلد جديد له يجب مراعاة التالي :
+
+1- كل مشروع جديد نقوم بانشاء ريبوزتري له على جيت هاب ويكون له ريموت خاص به 
+مراعاة التالي خلال انشاء الريبو الجديد :
+        Add a README file ❌ (اتركيه بدون تحديد).
+        Add .gitignore ❌ (اتركيه None).
+        Choose a license ❌ (اتركيه None).
+
+2- نقوم بتنفيذ هذه الخطوات لمرة واحدة في التيرمينال لكل مجلد مشروع جديد 
+
+    1- تهيئة الجلد git init
+    2-نقوم بتحديد هوية المستخدم الحالي  
+        1- git config user.name"NaghamMohammed"
+        2- git.config user.email"nghmm102@gmail.com"
+    3-انشاء ملفاتي وكتابة اكوادي الخاصة بمشروعي الجديد 
+    4- اضافة الملفات وحفظ النسخة الاولى محليا 
+        1-git add .
+        2-git commite -m "First commit"
+        3-git branch -M main
+    5-ربط مجلدي الجديد بمستودعه الخاص به الذي قمت بانشاءه في الخطوى الاولى 
+
+      git remote add origin git@github.com:NaghamMohammed/اسم المستودع الجديد .git
+
+      هذا الرابط يمكنني الحصول عليه بعد انشاء المسودع مباشرة اقوم بال   ضغط على زر ssh 
+      وانسخ الرابط الخاص بهذا المستودع
+    
+    6- الرفع التاسيسي الاول git push -u origin main
+    7-الان يصبح المشروع الجديد جاهز للعمل عبر ازرار الفيجوال مباشرة 
+
+
+
+في حال يوجد اكثر من مستخدم وحساب جيت هاب نستخدم خاصية ssh 
+1-ssh-keygen -t ed25519 -C "بريد_الحساب_الأول@example.com"
+       Enter للموافقة على المكان الافتراضي.
+        اضغط Enter مرتين لتخطّيها.
+2-ssh-keygen -t ed25519 -C "بريد_الحساب_الثاني@example.com"
+      enter 
+      n
+      ssh-keygen -t ed25519 -C "sabualqaraya@smail.ucas.edu.ps" -f C:\Users\LeNoVo\.ssh\id_ed25519_sabualqaraya
+ 
+
+مهمة :
+اكتب هذا الأمر في التيرمنال واضغط Enter ليقوم بعرض نص المفتاح العام المخصص لحسابك الجديد:
+cat C:\Users\LeNoVo\.ssh\id_ed25519_sabualqaraya.pub
+سيظهر لك نص طويل يبدأ بـ ssh-ed25519 وينتهي ببريدك الإلكتروني، قم بنسخه بالكامل.
+
+
+                        . إضافة المفتاح في موقع GitHubافتح المتصفح وسجل دخولك إلى موقع 
+                        GitHub بالحساب الجديد (sabualqaraya-dotcom).
+                        اضغط على صورتك الشخصية أعلى اليمين واختر Settings.
+                        من القائمة الجانبية اليسرى، اضغط على SSH and GPG keys.
+                        اضغط على الزر الأخضر New SSH key.
+                        في خانة Title: اكتب أي اسم لتمييز جهازك (مثلاً: Lenovo Laptop).
+                        في خانة Key: قم بلصق النص الطويل الذي نسخته من التيرمنال
+                        .اضغط على زر Add SSH key بالأسفل لإنهاء الربط بالموقع
+                        
+     اضغط Enter مرتين متتاليتين
+3-code ~/.ssh/config
+            سيفتح لك ملف فارغ، الصق داخله الكود التالي تماماً:    
+4-          
+        # الحساب الأول الافتراضي
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+# الحساب الثاني المخصص
+Host github-sabualqaraya
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_sabualqaraya
+
+5- Ctrl + S   
+
+6- git remote remove origin
+
+7- git remote add origin git@github.com:NaghamMohammed/[اسم_المستودع_الجديد].git
+    git remote add origin git@github-sabualqaraya:sabualqaraya-dotcom/[اسم_المستودع_الجديد].git
+
+
+8- رفع الملفات git push -u origin main
+ yes
+9-  لتتاكد git push origin main
+
+10-  ن الآن فصاعداً، عندما تفتحين أي مشروع جديد وتريدين رفعه لحسابك الثاني، لا تستخدمي روابط الـ HTTPS القديمة. فقط طبقي الأوامر التالية بالترتيب:
+
+            git init
+git add .
+git commit -m "First commit"
+git branch -M main
+
+# هنا السحر! نستخدم الاسم المخصص github-sabualqaraya بدلاً من github.com
+git remote add origin git@github-sabualqaraya:sabualqaraya-dotcom/اسم_المستودع_الجديد.git
+
+git push -u origin main
