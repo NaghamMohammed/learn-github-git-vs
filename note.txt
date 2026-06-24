@@ -93,3 +93,31 @@ git branch -M main
 git remote add origin git@github-sabualqaraya:sabualqaraya-dotcom/اسم_المستودع_الجديد.git
 
 git push -u origin main
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+<h1>Ahmed Ali</h1>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="section hero">
+<img src="images/profile.png" alt="Profile Photo">
+<h2>Hello, I'm Ahmed Ali</h2>
+<h3>Web Development Student</h3>
+<p>
+I am learning how to build simple websites
+using HTML and CSS.
+</p>
+</div>
+<--اكمل بقية االقسام هنا --!>
+</body>
+</html>
